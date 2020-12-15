@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LunchAndLearnAzureFunctionApp", "LunchAndLearnAzureNPartSeriesBuildingARealWorldFunctionApp\LunchAndLearnAzureFunctionApp.csproj", "{A35E5B7A-B5E7-415F-AF64-9604691AB93F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LunchAndLearnAzureFunctionApp", "LunchAndLearnAzureFunctionApp\LunchAndLearnAzureFunctionApp.csproj", "{A35E5B7A-B5E7-415F-AF64-9604691AB93F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
