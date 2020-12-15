@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace LunchAndLearnAzureNPartSeriesBuildingARealWorldFunctionApp
+namespace LunchAndLearnAzureFunctionApp
 {
     public static class Function1
     {
