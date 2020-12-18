@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using LunchAndLearnAzureFunctionApp.Models;
 using LunchAndLearnAzureFunctionApp.Repositories;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 namespace LunchAndLearnAzureFunctionApp.Services
