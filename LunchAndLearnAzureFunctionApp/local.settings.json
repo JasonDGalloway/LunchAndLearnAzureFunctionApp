@@ -1,8 +1,13 @@
 {
-    "IsEncrypted": false,
+  //https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings
+
+  "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "HealthCheckTimerCron":  "*/10 * * * * *"
+    "HealthCheckTimerCron": "*/10 * * * * *",
+
+    "FootballSettings:SelectedLeague": "NFL",
+    "FootballSettings:Leagues": "[{\"Acronym\":\"NFL\",\"FullName\":\"National Football League\"},{\"Acronym\":\"CFL\",\"FullName\":\"Canadian Football League\"},{\"Acronym\":\"AFL\",\"FullName\":\"Australian Football League\"}]"
   }
 }
