@@ -16,6 +16,7 @@ namespace LunchAndLearnAzureFunctionApp
             _healthCheckService = healthCheckService;
         }
 
+        //https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=csharp
         [FunctionName("HealthCheck")]
         public async Task Run([TimerTrigger("%HealthCheckTimerCron%")] TimerInfo myTimer, ILogger log)
         {
