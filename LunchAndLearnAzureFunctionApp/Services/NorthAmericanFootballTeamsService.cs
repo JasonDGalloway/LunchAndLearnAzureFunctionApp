@@ -7,12 +7,12 @@ using Microsoft.Extensions.Options;
 
 namespace LunchAndLearnAzureFunctionApp.Services
 {
-    public class FootballTeamsService : IFootballTeamsService
+	public class NorthAmericanFootballTeamsService : INorthAmericanFootballTeamsService
     {
-        private readonly IFootballRepository _footballRepository;
-        private readonly FootballSettings _footballSettings;
+        private readonly INorthAmericanFootballRepository _footballRepository;
+        private readonly NorthAmericanFootballSettings _footballSettings;
         
-        public FootballTeamsService(IFootballRepository footballRepository, IOptions<FootballSettings> footballSettings)
+        public NorthAmericanFootballTeamsService(INorthAmericanFootballRepository footballRepository, IOptions<NorthAmericanFootballSettings> footballSettings)
         {
             _footballRepository = footballRepository;
             _footballSettings = footballSettings.Value;

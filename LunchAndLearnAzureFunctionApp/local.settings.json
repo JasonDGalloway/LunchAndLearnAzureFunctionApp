@@ -9,6 +9,10 @@
     "HealthCheckTimerCron": "*/10 * * * * *",
 
     "FootballSettings:SelectedLeague": "NFL",
-    "FootballSettings:Leagues": "[{\"Acronym\":\"NFL\",\"FullName\":\"National Football League\"},{\"Acronym\":\"CFL\",\"FullName\":\"Canadian Football League\"},{\"Acronym\":\"AFL\",\"FullName\":\"Australian Football League\"}]"
+    "NorthAmericanFootballSettings:Leagues": "[{\"Acronym\":\"NFL\",\"FullName\":\"National Football League\"},{\"Acronym\":\"CFL\",\"FullName\":\"Canadian Football League\"},{\"Acronym\":\"AFL\",\"FullName\":\"Australian Football League\"}]",
+
+    "AustralianFootballSettings:SelectedLeague": "NFL",
+    "CanadianFootballSettings:SelectedLeague": "NFL",
+    "XflFootballSettings:SelectedLeague": "NFL"
   }
 }

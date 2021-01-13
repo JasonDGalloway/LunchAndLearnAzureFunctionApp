@@ -2,11 +2,11 @@
 
 namespace LunchAndLearnAzureFunctionApp.Repositories
 {
-    public class FootballRepository : IFootballRepository
+	public class NorthAmericanFootballRepository : INorthAmericanFootballRepository
     {
         private readonly List<KeyValuePair<string, string>> _footballTeams;
 
-        public FootballRepository(List<KeyValuePair<string, string>> footballTeams)
+        public NorthAmericanFootballRepository(List<KeyValuePair<string, string>> footballTeams)
         {
             _footballTeams = new List<KeyValuePair<string, string>>
             {

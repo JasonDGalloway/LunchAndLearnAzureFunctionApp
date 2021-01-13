@@ -2,8 +2,7 @@
 
 namespace LunchAndLearnAzureFunctionApp.Repositories
 {
-	public interface IFootballRepository
+	public interface INorthAmericanFootballRepository : IFootballRepository
     {
-        List<KeyValuePair<string, string>> GetCityTeamNames();
     }
 }

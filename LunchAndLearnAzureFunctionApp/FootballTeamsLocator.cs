@@ -12,7 +12,7 @@ namespace LunchAndLearnAzureFunctionApp
     {
         private readonly IFootballTeamsService _footballTeamsService;
 
-        public FootballTeamsLocator(IFootballTeamsService footballTeamsService)
+        public FootballTeamsLocator(INorthAmericanFootballTeamsService footballTeamsService)
         {
             _footballTeamsService = footballTeamsService;
         }
