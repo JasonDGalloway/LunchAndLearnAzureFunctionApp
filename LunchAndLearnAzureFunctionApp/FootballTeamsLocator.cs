@@ -12,16 +12,16 @@ namespace LunchAndLearnAzureFunctionApp
 {
     public class FootballTeamsLocator
     {
-        private readonly IAustralianFootballTeamsService _australianFootballTeamsService;
-        private readonly ICanadianFootballTeamsService _canadianFootballTeamsService;
-        private readonly INorthAmericanFootballTeamsService _northAmericanFootballTeamsService;
-        private readonly IXflFootballTeamsService _xflFootballTeamsService;
+        private readonly IFootballTeamsService<AustralianFootballSettings> _australianFootballTeamsService;
+        private readonly IFootballTeamsService<CanadianFootballSettings> _canadianFootballTeamsService;
+        private readonly IFootballTeamsService<NorthAmericanFootballSettings> _northAmericanFootballTeamsService;
+        private readonly IFootballTeamsService<XflFootballSettings> _xflFootballTeamsService;
         private readonly IOptions<AppSettings> _appSettings;
 
-        public FootballTeamsLocator(IAustralianFootballTeamsService australianFootballTeamsService,
-                                    ICanadianFootballTeamsService canadianFootballTeamsService,
-                                    INorthAmericanFootballTeamsService northAmericanFootballTeamsService,
-                                    IXflFootballTeamsService xflFootballTeamsService, IOptions<AppSettings> appSettings)
+        public FootballTeamsLocator(IFootballTeamsService<AustralianFootballSettings> australianFootballTeamsService,
+                IFootballTeamsService<CanadianFootballSettings> canadianFootballTeamsService,
+                IFootballTeamsService<NorthAmericanFootballSettings> northAmericanFootballTeamsService,
+                IFootballTeamsService<XflFootballSettings> xflFootballTeamsService, IOptions<AppSettings> appSettings)
         {
             _australianFootballTeamsService = australianFootballTeamsService;
             _canadianFootballTeamsService = canadianFootballTeamsService;

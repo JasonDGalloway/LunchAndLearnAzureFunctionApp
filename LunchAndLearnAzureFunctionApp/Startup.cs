@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
+﻿using LunchAndLearnAzureFunctionApp.Extensions;
 using LunchAndLearnAzureFunctionApp.Models;
-using LunchAndLearnAzureFunctionApp.Repositories;
 using LunchAndLearnAzureFunctionApp.Services;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -29,20 +27,11 @@ namespace LunchAndLearnAzureFunctionApp
             var sp = services.BuildServiceProvider();
             sp.GetService<IOptions<AppSettings>>().Value.Validate();
 
-            //TODO: Code Tip #2 - Service collection extension
             services
-                .AddSingleton<IAustralianFootballTeamsService, AustralianFootballTeamsService>()
-                .AddSingleton<ICanadianFootballTeamsService, CanadianFootballTeamsService>()
-                .AddSingleton<INorthAmericanFootballTeamsService, NorthAmericanFootballTeamsService>()
-                .AddSingleton<IXflFootballTeamsService, XflFootballTeamsService>()
+                .AddFootballRepositories()
+                .AddFootballServices()
 
-                .AddSingleton<IAustralianFootballRepository, AustralianFootballRepository>()
-                .AddSingleton<ICanadianFootballRepository, CanadianFootballRepository>()
-                .AddSingleton<INorthAmericanFootballRepository, NorthAmericanFootballRepository>()
-                .AddSingleton<IXflFootballRepository, XflFootballRepository>()
-                
                 .AddSingleton<IHealthCheckService, HealthCheckService>();
-
         }
     }
 }

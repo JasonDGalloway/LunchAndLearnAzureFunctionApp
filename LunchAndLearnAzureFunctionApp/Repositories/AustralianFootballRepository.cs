@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LunchAndLearnAzureFunctionApp.Repositories
 {
-	public class AustralianFootballRepository : IAustralianFootballRepository
+	public class AustralianFootballRepository : IFootballRepository<AustralianFootballSettings>
     {
         private readonly List<KeyValuePair<string, string>> _footballTeams;
         private readonly AustralianFootballSettings _settings;
