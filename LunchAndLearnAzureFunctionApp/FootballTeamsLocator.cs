@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using LunchAndLearnAzureFunctionApp.Services;
 using System;
+using LunchAndLearnAzureFunctionApp.Models;
+using Microsoft.Extensions.Options;
 
 namespace LunchAndLearnAzureFunctionApp
 {
@@ -14,16 +16,18 @@ namespace LunchAndLearnAzureFunctionApp
         private readonly ICanadianFootballTeamsService _canadianFootballTeamsService;
         private readonly INorthAmericanFootballTeamsService _northAmericanFootballTeamsService;
         private readonly IXflFootballTeamsService _xflFootballTeamsService;
+        private readonly IOptions<AppSettings> _appSettings;
 
         public FootballTeamsLocator(IAustralianFootballTeamsService australianFootballTeamsService,
                                     ICanadianFootballTeamsService canadianFootballTeamsService,
                                     INorthAmericanFootballTeamsService northAmericanFootballTeamsService,
-                                    IXflFootballTeamsService xflFootballTeamsService)
+                                    IXflFootballTeamsService xflFootballTeamsService, IOptions<AppSettings> appSettings)
         {
             _australianFootballTeamsService = australianFootballTeamsService;
             _canadianFootballTeamsService = canadianFootballTeamsService;
             _northAmericanFootballTeamsService = northAmericanFootballTeamsService;
             _xflFootballTeamsService = xflFootballTeamsService;
+            _appSettings = appSettings;
         }
 
         //https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp
