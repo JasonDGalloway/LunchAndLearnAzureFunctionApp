@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace LunchAndLearnAzureFunctionApp.Repositories
+﻿namespace LunchAndLearnAzureFunctionApp.Repositories
 {
-	public interface INorthAmericanFootballRepository : IFootballRepository
+    public interface INorthAmericanFootballRepository : IFootballRepository
     {
     }
 }

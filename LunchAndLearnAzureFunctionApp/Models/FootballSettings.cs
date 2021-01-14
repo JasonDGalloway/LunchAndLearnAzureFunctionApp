@@ -4,7 +4,8 @@ namespace LunchAndLearnAzureFunctionApp.Models
 {
     public class FootballSettings
     {
-        public string SelectedLeague { get; set; }
-        public List<FootballLeagues> Leagues { get; set; }
+        public string LeagueName { get; set; }
+        public List<FootballDivision> Divisions { get; set; }
+        public string RepoConnectionString { get; set; }
     }
 }

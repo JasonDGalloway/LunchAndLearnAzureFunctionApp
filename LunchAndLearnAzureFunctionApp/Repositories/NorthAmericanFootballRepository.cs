@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using LunchAndLearnAzureFunctionApp.Models;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 
 namespace LunchAndLearnAzureFunctionApp.Repositories
 {
 	public class NorthAmericanFootballRepository : INorthAmericanFootballRepository
     {
         private readonly List<KeyValuePair<string, string>> _footballTeams;
+        private readonly NorthAmericanFootballSettings _settings;
 
-        public NorthAmericanFootballRepository(List<KeyValuePair<string, string>> footballTeams)
+        public NorthAmericanFootballRepository(IOptions<NorthAmericanFootballSettings> settings)
         {
             _footballTeams = new List<KeyValuePair<string, string>>
             {
@@ -43,6 +46,8 @@ namespace LunchAndLearnAzureFunctionApp.Repositories
                 new KeyValuePair<string, string>("Tennessee", "Titans"),
                 new KeyValuePair<string, string>("Washington", "Football Team")
             };
+
+            _settings = settings.Value;
         }
 
         public List<KeyValuePair<string, string>> GetCityTeamNames()

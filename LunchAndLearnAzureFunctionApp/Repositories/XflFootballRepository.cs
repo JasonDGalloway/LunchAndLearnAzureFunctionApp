@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using LunchAndLearnAzureFunctionApp.Models;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 
 namespace LunchAndLearnAzureFunctionApp.Repositories
 {
 	public class XflFootballRepository : IXflFootballRepository
     {
         private readonly List<KeyValuePair<string, string>> _footballTeams;
+        private readonly XflFootballSettings _settings;
 
-        public XflFootballRepository(List<KeyValuePair<string, string>> footballTeams)
+        public XflFootballRepository(IOptions<XflFootballSettings> settings)
         {
-            _footballTeams = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>("Arizona", "Cardinals"),
-            };
+            _footballTeams = new List<KeyValuePair<string, string>>();
+            _settings = settings.Value;
         }
 
         public List<KeyValuePair<string, string>> GetCityTeamNames()

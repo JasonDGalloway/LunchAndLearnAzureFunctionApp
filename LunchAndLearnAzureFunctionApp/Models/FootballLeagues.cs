@@ -1,6 +1,6 @@
 ﻿namespace LunchAndLearnAzureFunctionApp.Models
 {
-    public class FootballLeagues
+    public class FootballLeague
     {
         public string Acronym { get; set; }
         public string FullName { get; set; }

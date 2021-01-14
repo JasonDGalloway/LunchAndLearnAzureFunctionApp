@@ -20,43 +20,39 @@ namespace LunchAndLearnAzureFunctionApp
             //TODO: Code Tip #1 - less lines of code for Bind:
             //var config = services.BuildServiceProvider().GetService<IConfiguration>();
             //services.AddOptions<FootballSettings>().Bind(config);
-            
-            services.AddOptions<FootballSettings>()
+
+            services.AddOptions<AppSettings>()
                 .Configure<IConfiguration>((settings, configuration) =>
                 {
-                    configuration.GetSection("FootballSettings").Bind(settings);
+                    configuration.GetSection("AppSettings").Bind(settings);
                 });
 
             services.AddOptions<AustralianFootballSettings>()
                 .Configure<IConfiguration>((settings, configuration) =>
                 {
                     configuration.GetSection("AustralianFootballSettings").Bind(settings);
-                    var leagues = configuration.GetSection("AustralianFootballSettings:Leagues").Value;
-                    settings.Leagues = JsonSerializer.Deserialize<List<FootballLeagues>>(leagues);
                 });
 
             services.AddOptions<CanadianFootballSettings>()
                 .Configure<IConfiguration>((settings, configuration) =>
                 {
                     configuration.GetSection("CanadianFootballSettings").Bind(settings);
-                    var leagues = configuration.GetSection("CanadianFootballSettings:Leagues").Value;
-                    settings.Leagues = JsonSerializer.Deserialize<List<FootballLeagues>>(leagues);
+                    var divisions = configuration.GetSection("CanadianFootballSettings:Divisions").Value;
+                    settings.Divisions = JsonSerializer.Deserialize<List<FootballDivision>>(divisions);
                 });
 
             services.AddOptions<NorthAmericanFootballSettings>()
                 .Configure<IConfiguration>((settings, configuration) =>
                 {
                     configuration.GetSection("NorthAmericanFootballSettings").Bind(settings);
-                    var leagues = configuration.GetSection("NorthAmericanFootballSettings:Leagues").Value;
-                    settings.Leagues = JsonSerializer.Deserialize<List<FootballLeagues>>(leagues);
+                    var divisions = configuration.GetSection("NorthAmericanFootballSettings:Divisions").Value;
+                    settings.Divisions = JsonSerializer.Deserialize<List<FootballDivision>>(divisions);
                 });
 
             services.AddOptions<XflFootballSettings>()
                 .Configure<IConfiguration>((settings, configuration) =>
                 {
                     configuration.GetSection("XflFootballSettings").Bind(settings);
-                    var leagues = configuration.GetSection("XflFootballSettings:Leagues").Value;
-                    settings.Leagues = JsonSerializer.Deserialize<List<FootballLeagues>>(leagues);
                 });
 
             //TODO: Code Tip #2 - Service collection extension

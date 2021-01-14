@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using LunchAndLearnAzureFunctionApp.Models;
 using LunchAndLearnAzureFunctionApp.Repositories;
@@ -7,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace LunchAndLearnAzureFunctionApp.Services
 {
-	public class NorthAmericanFootballTeamsService : INorthAmericanFootballTeamsService
+    public class NorthAmericanFootballTeamsService : INorthAmericanFootballTeamsService
     {
         private readonly INorthAmericanFootballRepository _footballRepository;
         private readonly NorthAmericanFootballSettings _footballSettings;
