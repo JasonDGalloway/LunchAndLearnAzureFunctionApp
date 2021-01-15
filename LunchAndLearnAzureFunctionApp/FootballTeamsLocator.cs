@@ -31,12 +31,12 @@ namespace LunchAndLearnAzureFunctionApp
         }
 
         //https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp
+        //https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#constraints
         [FunctionName("GetNorthAmericanFootballNames")]
-        public IActionResult GetNorthAmericanFootballNames([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, ILogger log)
+        public IActionResult GetNorthAmericanFootballNames(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetNorthAmericanFootballNames/{city=}")] HttpRequest req, string city, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string city = req.Query["city"];
 
             string responseMessage = string.IsNullOrEmpty(city)
                 ? $"This HTTP triggered function executed successfully. Pass a city in the query string for a personalized response. Or claim the Jets..." +
@@ -47,11 +47,10 @@ namespace LunchAndLearnAzureFunctionApp
         }
 
         [FunctionName("GetAustralianFootballNames")]
-        public IActionResult GetAustralianFootballNames([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, ILogger log)
+        public IActionResult GetAustralianFootballNames(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetAustralianFootballNames/{city=}")] HttpRequest req, string city, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string city = req.Query["city"];
 
             string responseMessage = string.IsNullOrEmpty(city)
                 ? $"This HTTP triggered function executed successfully. Pass a city in the query string for a personalized response." +
@@ -62,11 +61,10 @@ namespace LunchAndLearnAzureFunctionApp
         }
 
         [FunctionName("GetCanadianFootballNames")]
-        public IActionResult GetCanadianFootballNames([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, ILogger log)
+        public IActionResult GetCanadianFootballNames(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetCanadianFootballNames/{city=}")] HttpRequest req, string city, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string city = req.Query["city"];
 
             string responseMessage = string.IsNullOrEmpty(city)
                 ? $"This HTTP triggered function executed successfully. Pass a city in the query string for a personalized response. Or claim the RedBlacks..." +
@@ -77,11 +75,10 @@ namespace LunchAndLearnAzureFunctionApp
         }
 
         [FunctionName("GetXflFootballNames")]
-        public IActionResult GetXflFootballNames([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req, ILogger log)
+        public IActionResult GetXflFootballNames(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "GetXflFootballNames/{city=}")] HttpRequest req, string city, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string city = req.Query["city"];
 
             string responseMessage = string.IsNullOrEmpty(city)
                 ? $"This HTTP triggered function executed successfully. Pass a city in the query string for a personalized response." +

@@ -1,4 +1,6 @@
-﻿using LunchAndLearnAzureFunctionApp.Extensions;
+﻿using System.Reflection;
+using AzureFunctions.Extensions.Swashbuckle;
+using LunchAndLearnAzureFunctionApp.Extensions;
 using LunchAndLearnAzureFunctionApp.Models;
 using LunchAndLearnAzureFunctionApp.Services;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
@@ -32,6 +34,8 @@ namespace LunchAndLearnAzureFunctionApp
                 .AddFootballServices()
 
                 .AddSingleton<IHealthCheckService, HealthCheckService>();
+            
+            builder.AddSwashBuckle(Assembly.GetExecutingAssembly());
         }
     }
 }
